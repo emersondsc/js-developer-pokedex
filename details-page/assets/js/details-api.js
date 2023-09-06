@@ -27,25 +27,26 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
     pokemon.spdefence = pokeDetail.stats [4].base_stat;
     pokemon.speed = pokeDetail.stats [5].base_stat;
 
-    
-    return console.log(pokemon)
+    pokemon.height = pokeDetail.height
+    pokemon.weight = (pokeDetail.weight)/10
+
+    return pokemon
 }
 
 function convertPokemonToLi(pokemon) {
     return `
-            <main class="content">
             <section class="banner">
-                <div class="pokemon">
-                    <button class="return-button"> Return </button>
-                    <h1 class="name">Bulbasaur</h1>
-                    <span class="number">#1</span>
+                <div class="pokemon p${pokemon.type}">
+                <a class="return-button" href="http://127.0.0.1:5500/index.html">&#10140;</a>
+                    <h1 class="name">${pokemon.name}</h1>
+                    <span class="number">#${pokemon.number}</span>
                     <div class="detail">
                         <ol class="types">
                                ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
                         </ol>
 
-                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
-                            alt="Bulbasaur">
+                        <img src=${pokemon.photo}
+                            alt="${pokemon.name}">
                     </div>
                 </div>
 
@@ -57,20 +58,24 @@ function convertPokemonToLi(pokemon) {
                     <ul class="list-about">
                         <li class="item-about">
                             <div>
-                                <span class="about-attribute">Heigth</span>
-                                <span class="about-value">0,7 cm</span>
+                                <span class="about-attribute">Height</span>
+                                <span class="about-value">${pokemon.height} cm</span>
                             </div>
                         </li>
                         <li class="item-about">
                             <div>
-                                <span class="about-attribute">Weigth</span>
-                                <span class="about-value">6,9 Kg</span>
+                                <span class="about-attribute">Weight</span>
+                                <span class="about-value">${pokemon.weight} Kg</span>
                             </div>
                         </li>
                         <li class="item-about">
-                            <div>
-                                <span class="about-attribute">Abilities</span>
-                                <span class="about-value">Overgrow, Chlorophyll</span>
+                            <div class= "about-abilities"> 
+                                    <ol class="about-attribute">
+                                        
+                                        <span class="about-attribute">Abilities</span>
+                                        
+                                         ${pokemon.abilities.map((ability) => `<li class="value">${ability}</li>`).join(', ')}
+                                    </ol>
                             </div>
                         </li>
                     </ul>
@@ -82,11 +87,11 @@ function convertPokemonToLi(pokemon) {
                         <li  class="item-stat">
                             <div>
                                 <span class="stats-attribute">HP</span>
-                                <span class="stats-value">45</span>
+                                <span class="stats-value">${pokemon.hp}</span>
                             </div>
                             <div>
-                                <progress class="progress-bar" max="100" value="70">
-                                    70%
+                                <progress class="progress-bar" max="100" value=${pokemon.hp}>
+                                ${pokemon.hp}
                                 </progress>
 
                             </div>
@@ -94,11 +99,11 @@ function convertPokemonToLi(pokemon) {
                         <li  class="item-stat">
                             <div>
                                 <span class="stats-attribute">Attack</span>
-                                <span class="stats-value">49</span>
+                                <span class="stats-value">${pokemon.attack}</span>
                             </div>
                             <div>
-                                <progress class="progress-bar" max="100" value="70">
-                                    70%
+                                <progress class="progress-bar" max="100" value=${pokemon.attack}>
+                                ${pokemon.attack}
                                 </progress>
 
                             </div>
@@ -106,12 +111,12 @@ function convertPokemonToLi(pokemon) {
                         <li  class="item-stat">
                             <div>
                                 <span class="stats-attribute">Defence</span>
-                                <span class="stats-value">49</span>
+                                <span class="stats-value">${pokemon.defence}</span>
                             </div>
 
                             <div>
-                                <progress class="progress-bar" max="100" value="70">
-                                    70%
+                                <progress class="progress-bar" max="100" value=${pokemon.defence}>
+                                ${pokemon.defence}
                                 </progress>
 
                             </div>
@@ -119,11 +124,11 @@ function convertPokemonToLi(pokemon) {
                         <li  class="item-stat">
                             <div>
                                 <span class="stats-attribute">Sp.Atk</span>
-                                <span class="stats-value">65</span>
+                                <span class="stats-value">${pokemon.spattack}</span>
                             </div>
                             <div>
-                                <progress class="progress-bar" max="100" value="70">
-                                    70%
+                                <progress class="progress-bar" max="100" value=${pokemon.spattack}>
+                                ${pokemon.spattack}
                                 </progress>
 
                             </div>
@@ -131,11 +136,11 @@ function convertPokemonToLi(pokemon) {
                         <li  class="item-stat">
                             <div>
                                 <span class="stats-attribute">Sp.Def</span>
-                                <span class="stats-value">65</span>
+                                <span class="stats-value">${pokemon.spdefence}</span>
                             </div>
                             <div>
-                                <progress class="progress-bar" max="100" value="70">
-                                    70%
+                                <progress class="progress-bar" max="100" value=${pokemon.spdefence}>
+                                ${pokemon.spdefence}
                                 </progress>
 
                             </div>
@@ -143,11 +148,11 @@ function convertPokemonToLi(pokemon) {
                         <li  class="item-stat">
                             <div>
                                 <span class="stats-attribute">Speed</span>
-                                <span class="stats-value">45</span>
+                                <span class="stats-value">${pokemon.speed}</span>
                             </div>
                             <div>
-                                <progress class="progress-bar" max="100" value="70">
-                                    70%
+                                <progress class="progress-bar" max="100" value=${pokemon.speed}>
+                                ${pokemon.speed}
                                 </progress>
 
                             </div>
@@ -156,7 +161,6 @@ function convertPokemonToLi(pokemon) {
                 </div>
 
             </section>
-        </main
     `
 }
 
@@ -168,10 +172,10 @@ function getPokemons() {
 
     return fetch(url)
         .then((response) => response.json())
-        .then((pokemon) => {
-            convertPokeApiDetailToPokemon(pokemon)
-            console.log(pokemon)
-            allTheContent.innerHTML += (convertPokemonToLi(pokemon))
+        .then((convertPokeApiDetailToPokemon))
+        .then((pokemon) => {allTheContent.innerHTML += (convertPokemonToLi(pokemon))
+            console.log(allTheContent.innerHTML)
+            
         })
         .catch((error) => console.error(error));
 }
