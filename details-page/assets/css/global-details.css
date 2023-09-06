@@ -1,0 +1,21 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color:  #f6f8fc;
+}
+
+
+@media screen and (min-width: 992px) {
+    .content {
+        max-width: 992px;
+        height: auto;
+        margin: 1rem auto;
+    }
+    .informatives {
+        background-color: white;
+        border-radius: 1rem 1rem 0 0;
+    }
+}

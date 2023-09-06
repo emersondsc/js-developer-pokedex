@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+
+    <!-- Nosso CSS -->
+    <link rel="stylesheet" href="assets/css/global-details.css">
+    <link rel="stylesheet" href="assets/css/pokemon-details.css">
+</head>
+
+<body>
+    <!-- everything here -->
+    <main id="allTheContent" class="content">
+        <section class="banner">
+            <div class="pokemon">
+                <button class="return-button"> Return </button>
+                <h1 class="name">Bulbasaur</h1>
+                <span class="number">#1</span>
+                <div class="detail">
+                    <ol class="types">  
+                        <li class="type grass"> grass </li> <li class="type poison"> poison </li>
+                    </ol>
+    
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
+                         alt="Bulbasaur">
+                </div>
+            </div>
+            
+        </section>
+        
+        <section class="informatives"> 
+            <div class="about">
+                <h3>About</h3>
+                <ul class="list-about">
+                    <li class="item-about">
+                        <div>
+                            <span class="about-attribute">Heigth</span> 
+                            <span class="about-value">0,7 cm</span>  
+                        </div>
+                    </li>
+                    <li class="item-about">
+                        <div>
+                            <span class="about-attribute">Weigth</span> 
+                            <span class="about-value">6,9 Kg</span>  
+                        </div>
+                    </li>
+                    <li class="item-about">
+                        <div>
+                            <span class="about-attribute">Abilities</span> 
+                            <span class="about-value">Overgrow, Chlorophyll</span>  
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="stats">
+                <h3>Stats</h3>
+                <ul class="list-stats"> 
+                
+                    <li  class="item-stat">
+                        <div>
+                            <span class="stats-attribute">HP</span> 
+                            <span class="stats-value">45</span>  
+                        </div>
+                        <div>
+                            <progress class="progress-bar" max="100" value="70">
+                                70%
+                            </progress>  
+
+                        </div>
+                    </li>
+                    <li  class="item-stat">
+                        <div>
+                            <span class="stats-attribute">Attack</span> 
+                            <span class="stats-value">49</span> 
+                        </div>
+                        <div>
+                            <progress class="progress-bar" max="100" value="70">
+                                70%
+                            </progress>  
+
+                        </div>
+                    </li>
+                    <li  class="item-stat">
+                        <div>
+                            <span class="stats-attribute">Defence</span>
+                            <span class="stats-value">49</span>
+                        </div>
+                        
+                        <div>
+                            <progress class="progress-bar" max="100" value="70">
+                                70%
+                            </progress>  
+
+                        </div>
+                    </li>
+                    <li  class="item-stat">
+                        <div>
+                            <span class="stats-attribute">Sp.Atk</span>
+                            <span class="stats-value">65</span>
+                        </div>
+                        <div>
+                            <progress class="progress-bar" max="100" value="70">
+                                70%
+                            </progress>  
+
+                        </div>
+                    </li>
+                    <li  class="item-stat">
+                        <div>
+                            <span class="stats-attribute">Sp.Def</span>
+                            <span class="stats-value">65</span>
+                        </div>
+                        <div>
+                            <progress class="progress-bar" max="100" value="70">
+                                70%
+                            </progress>  
+
+                        </div>
+                    </li>  
+                    <li  class="item-stat">
+                        <div>
+                            <span class="stats-attribute">Speed</span>
+                            <span class="stats-value">45</span>
+                        </div>
+                        <div>
+                            <progress class="progress-bar" max="100" value="70">
+                                70%
+                            </progress>  
+
+                        </div>
+                    </li>              
+                </ul>
+            </div>
+                
+        </section>
+    </main>   
+    
+    <script src="assets/js/pokemon-details-model.js"></script>
+    <script src="assets/js/details-api.js"></script>
+   
+</body>
+
+</html>
