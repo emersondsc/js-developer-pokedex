@@ -37,7 +37,7 @@ function convertPokemonToLi(pokemon) {
     return `
             <section class="banner">
                 <div class="pokemon p${pokemon.type}">
-                <a class="return-button" href="http://127.0.0.1:5500/index.html">&#10140;</a>
+                <a class="return-button" href="/">&#10140;</a>
                     <h1 class="name">${pokemon.name}</h1>
                     <span class="number">#${pokemon.number}</span>
                     <div class="detail">
